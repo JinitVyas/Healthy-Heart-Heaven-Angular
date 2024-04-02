@@ -1,0 +1,66 @@
+<div class="checkup-page" id="checkup">
+    <h2>Get your checkup done</h2>
+    <div class="checkup-form-container ">
+        <div class="main-form">
+            <div id="left-form">
+                <div>
+                    <div class="left-form-inner-div">
+                        <label for="age">Age:</label>
+                        <input type="number" [(ngModel)]="age" id="age" name="age" required min="18" max="100">
+                    </div>
+                    <div class="left-form-inner-div">
+                        <label for="sex">Sex:</label>
+                        <select class="" id="sex" name="sex" required>
+                            <option value="1" selected>Male</option>
+                            <option value="0">Female</option>
+                        </select>
+                    </div>
+                    <div class="left-form-inner-div">
+                        <label for="cp">Chest pain type (cp):</label>
+                        <input type="number" class="" id="cp" name="cp" required>
+                    </div>
+                    <div class="left-form-inner-div">
+                        <label for="trestbps">Resting blood pressure (trestbps):</label>
+                        <input type="number" class="" id="trestbps" name="trestbps" required>
+                    </div>
+                    <div class="right-form-inner-div">
+                        <label for="oldpeak">ST depression induced by exercise relative to rest
+                            (oldpeak):</label>
+                        <input type="number" class="" id="oldpeak" name="oldpeak" required>
+                    </div>
+                </div>
+            </div>
+            <div id="right-form">
+                <div>
+                    <div class="right-form-inner-div">
+                        <label for="fbs">Fasting blood sugar &gt; 120 mg/dl (fbs):</label>
+                        <select class="" id="fbs" name="fbs" required>
+                            <option value="0" selected>No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
+                    <div class="right-form-inner-div">
+                        <label for="restecg">Resting electrocardiographic results (restecg):</label>
+                        <input type="number" class="" id="restecg" name="restecg" required>
+                    </div>
+                    <div class="right-form-inner-div">
+                        <label for="thalach">Maximum heart rate achieved (thalach):</label>
+                        <input type="number" class="" id="thalach" name="thalach" required>
+                    </div>
+                    <div class="right-form-inner-div">
+                        <label for="exang">Exercise induced angina (exang):</label>
+                        <select class="" id="exang" name="exang" required>
+                            <option value="0">No</option>
+                            <option value="1">Yes</option>
+                        </select>
+                    </div>
+                    <div class="left-form-inner-div">
+                        <label for="chol">Serum cholesterol in mg/dl (chol):</label>
+                        <input type="number" class="" id="chol" name="chol" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="form-bottom" (click)="sendData(age)">Predict</button>
+    </div>
+</div>
