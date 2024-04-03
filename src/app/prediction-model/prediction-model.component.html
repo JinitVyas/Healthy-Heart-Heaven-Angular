@@ -6,27 +6,27 @@
                 <div>
                     <div class="left-form-inner-div">
                         <label for="age">Age:</label>
-                        <input type="number" [(ngModel)]="age" id="age" name="age" required min="18" max="100">
+                        <input type="number" id="age" name="age" required min="18" max="100" [(ngModel)]="userData[0]">
                     </div>
                     <div class="left-form-inner-div">
                         <label for="sex">Sex:</label>
-                        <select class="" id="sex" name="sex" required>
+                        <select class="" id="sex" name="sex" required [(ngModel)]="userData[1]">
                             <option value="1" selected>Male</option>
                             <option value="0">Female</option>
                         </select>
                     </div>
                     <div class="left-form-inner-div">
                         <label for="cp">Chest pain type (cp):</label>
-                        <input type="number" class="" id="cp" name="cp" required>
+                        <input type="number" class="" id="cp" name="cp" required [(ngModel)]="userData[2]">
                     </div>
                     <div class="left-form-inner-div">
                         <label for="trestbps">Resting blood pressure (trestbps):</label>
-                        <input type="number" class="" id="trestbps" name="trestbps" required>
+                        <input type="number" class="" id="trestbps" name="trestbps" required [(ngModel)]="userData[3]">
                     </div>
                     <div class="right-form-inner-div">
                         <label for="oldpeak">ST depression induced by exercise relative to rest
                             (oldpeak):</label>
-                        <input type="number" class="" id="oldpeak" name="oldpeak" required>
+                        <input type="number" class="" id="oldpeak" name="oldpeak" required [(ngModel)]="userData[4]">
                     </div>
                 </div>
             </div>
@@ -34,33 +34,33 @@
                 <div>
                     <div class="right-form-inner-div">
                         <label for="fbs">Fasting blood sugar &gt; 120 mg/dl (fbs):</label>
-                        <select class="" id="fbs" name="fbs" required>
+                        <select class="" id="fbs" name="fbs" required [(ngModel)]="userData[5]">
                             <option value="0" selected>No</option>
                             <option value="1">Yes</option>
                         </select>
                     </div>
                     <div class="right-form-inner-div">
                         <label for="restecg">Resting electrocardiographic results (restecg):</label>
-                        <input type="number" class="" id="restecg" name="restecg" required>
+                        <input type="number" class="" id="restecg" name="restecg" required [(ngModel)]="userData[6]">
                     </div>
                     <div class="right-form-inner-div">
                         <label for="thalach">Maximum heart rate achieved (thalach):</label>
-                        <input type="number" class="" id="thalach" name="thalach" required>
+                        <input type="number" class="" id="thalach" name="thalach" required [(ngModel)]="userData[7]">
                     </div>
                     <div class="right-form-inner-div">
                         <label for="exang">Exercise induced angina (exang):</label>
-                        <select class="" id="exang" name="exang" required>
+                        <select class="" id="exang" name="exang" required [(ngModel)]="userData[8]">
                             <option value="0">No</option>
                             <option value="1">Yes</option>
                         </select>
                     </div>
                     <div class="left-form-inner-div">
                         <label for="chol">Serum cholesterol in mg/dl (chol):</label>
-                        <input type="number" class="" id="chol" name="chol" required>
+                        <input type="number" class="" id="chol" name="chol" required [(ngModel)]="userData[9]">
                     </div>
                 </div>
             </div>
         </div>
-        <button id="form-bottom" (click)="sendData(age)">Predict</button>
+        <button id="form-bottom" (click)="sendUserData(userData)">Predict</button>
     </div>
 </div>

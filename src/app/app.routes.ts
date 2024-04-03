@@ -9,5 +9,6 @@ export const routes: Routes = [
     { path: 'Awareness', component: AwarenessComponent },
     { path: 'PatientsSpeaks', component: HearFromPatientsComponent },
     { path: 'QuickCheckup', component: PredictionModelComponent },
+    { path: 'predict', component: PredictionModelComponent },
     { path: '', redirectTo: '/home', pathMatch:'full' },
 ];
