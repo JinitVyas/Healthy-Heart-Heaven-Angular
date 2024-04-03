@@ -11,7 +11,8 @@ import { FormsModule } from '@angular/forms'; // NgModel
   styleUrl: './prediction-model.component.css'
 })
 export class PredictionModelComponent {
-  userData: number[] = new Array(10).fill(0);
+  userData: number[] = new Array(13).fill(0);
+  prediction : number | undefined;
 
   constructor(private http: HttpClient) { }
   sendData(data : number[]){
@@ -24,6 +25,13 @@ export class PredictionModelComponent {
     this.sendData(data)
     .subscribe(response => {
       console.log('Data received from backend:', response);
+      this.prediction = response.prediction;
+      if (this.prediction) {
+        alert("The patient is in danger")
+      }
+      else{
+        alert("The patient is safe")
+      }
     },
     error => {
       console.log('Error sending user data:', error);

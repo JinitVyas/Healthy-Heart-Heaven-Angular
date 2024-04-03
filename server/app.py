@@ -12,27 +12,24 @@ app = Flask(__name__)
 # CORS(app)
 CORS(app, origins=['http://localhost:4200']) 
 
-# data = request.get_json()
-# print(data)
-
 
 df = pd.read_csv('../data/HeartDiseasedata.csv')
 
-# last_row = df.iloc[-1]
-# df = df.iloc[:-1]
+last_row = df.iloc[-1]
+df = df.iloc[:-1]
 
 x = df[df.columns[:-1]]
 y = df[df.columns[-1]]
 
-# last_t = last_row.iloc[-1]
-# last_row = last_row.iloc[:-1]
+last_t = last_row.iloc[-1]
+last_row = last_row.iloc[:-1]
 # print("***********\n",last_row,"***********\n")
 # print("***********\n",last_row.shape,"***********\n")
 # print("***********\n",last_t,"***********\n")
 
-# last_row = pd.DataFrame(np.array(last_row).reshape(1, -1))
-# last_t = pd.Series(last_t)
-# last_t
+last_row = pd.DataFrame(np.array(last_row).reshape(1, -1))
+last_t = pd.Series(last_t)
+last_t
 
 input_train, input_test, output_train, output_test = train_test_split(x, y, test_size = 0.20, random_state = 100)
 clf = DecisionTreeClassifier()
@@ -48,13 +45,15 @@ accurate = accuracy_score(output_test, prediction)
 def predict():
     data = request.get_json()  # Assumes JSON-formatted data
 
-    if len(data) != 10:
+    if len(data) != 13:
         return jsonify({'error': 'Invalid data format: expected an array of 10 numbers'}), 400
 
     processed_data = np.array(data).reshape(1, -1)  # Example: simply returning the data unchanged
 
     prediction = clf.predict(processed_data)
-    response = jsonify({'prediction': prediction[0]})  # Access the single predicted value
+    # print(prediction," ",type(prediction))
+    prediction_int = int(prediction[0])
+    response = jsonify({'prediction': prediction_int})
     response.headers['Content-Type'] = 'application/json'
 
     # Set the Content-Type header to ensure Angular interprets it as JSON
@@ -67,4 +66,4 @@ def predict():
         # Add other relevant information as needed (e.g., prediction results)
     # }
 
-    return jsonify(response)
+    return response

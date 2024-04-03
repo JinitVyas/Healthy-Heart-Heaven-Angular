@@ -501,7 +501,7 @@ footer .footer-bottom {
     /* background-color: rgba(219, 219, 219, 0.706); */
     color: var(--btn--primary-hover-color);
     background-color: var(--card-background-color);
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
 }
 

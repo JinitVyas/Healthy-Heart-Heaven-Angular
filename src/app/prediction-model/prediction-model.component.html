@@ -17,32 +17,31 @@
                     </div>
                     <div class="left-form-inner-div">
                         <label for="cp">Chest pain type (cp):</label>
-                        <input type="number" class="" id="cp" name="cp" required [(ngModel)]="userData[2]">
+                        <input type="number" class="" id="cp" name="cp" min="0" max="3" required [(ngModel)]="userData[2]">
                     </div>
                     <div class="left-form-inner-div">
                         <label for="trestbps">Resting blood pressure (trestbps):</label>
                         <input type="number" class="" id="trestbps" name="trestbps" required [(ngModel)]="userData[3]">
                     </div>
-                    <div class="right-form-inner-div">
-                        <label for="oldpeak">ST depression induced by exercise relative to rest
-                            (oldpeak):</label>
-                        <input type="number" class="" id="oldpeak" name="oldpeak" required [(ngModel)]="userData[4]">
+                    <div class="left-form-inner-div">
+                        <label for="chol">Serum cholesterol in mg/dl (chol):</label>
+                        <input type="number" class="" id="chol" name="chol" required [(ngModel)]="userData[4]">
                     </div>
-                </div>
-            </div>
-            <div id="right-form">
-                <div>
-                    <div class="right-form-inner-div">
+                    <div class="left-form-inner-div">
                         <label for="fbs">Fasting blood sugar &gt; 120 mg/dl (fbs):</label>
                         <select class="" id="fbs" name="fbs" required [(ngModel)]="userData[5]">
                             <option value="0" selected>No</option>
                             <option value="1">Yes</option>
                         </select>
                     </div>
-                    <div class="right-form-inner-div">
+                    <div class="left-form-inner-div">
                         <label for="restecg">Resting electrocardiographic results (restecg):</label>
-                        <input type="number" class="" id="restecg" name="restecg" required [(ngModel)]="userData[6]">
+                        <input type="number" class="" id="restecg" name="restecg" min="0" max="2" required [(ngModel)]="userData[6]">
                     </div>
+                </div>
+            </div>
+            <div id="right-form">
+                <div>
                     <div class="right-form-inner-div">
                         <label for="thalach">Maximum heart rate achieved (thalach):</label>
                         <input type="number" class="" id="thalach" name="thalach" required [(ngModel)]="userData[7]">
@@ -54,10 +53,32 @@
                             <option value="1">Yes</option>
                         </select>
                     </div>
-                    <div class="left-form-inner-div">
-                        <label for="chol">Serum cholesterol in mg/dl (chol):</label>
-                        <input type="number" class="" id="chol" name="chol" required [(ngModel)]="userData[9]">
+                    <div class="right-form-inner-div">
+                        <label for="oldpeak">ST depression induced by exercise relative to rest
+                            (oldpeak):</label>
+                        <input type="number" class="" id="oldpeak" name="oldpeak" required [(ngModel)]="userData[9]">
                     </div>
+                    <div class="right-form-inner-div">
+                        <div class="form-group">
+                            <label for="slope">Slope:</label>
+                            <input type="number" class="form-control" id="slope" name="slope" min="0" max="2" required [(ngModel)]="userData[10]">
+                        </div>
+                    </div>
+                    
+                    <div class="right-form-inner-div">
+                        <div class="form-group">
+                            <label for="ca">Ca:</label>
+                            <input type="number" class="form-control" id="ca" name="ca" min="0" max="4" required [(ngModel)]="userData[11]">
+                        </div>
+                    </div>
+                    
+                    <div class="left-form-inner-div">
+                        <div class="form-group">
+                            <label for="thal">Thal:</label>
+                            <input type="number" class="form-control" id="thal" name="thal" min="0" max="3" required [(ngModel)]="userData[12]">
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
